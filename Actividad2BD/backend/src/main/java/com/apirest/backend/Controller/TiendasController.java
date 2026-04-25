@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.apirest.backend.Model.TiendasModel;
+import com.apirest.backend.Model.Tiendasmodel;
 import com.apirest.backend.Service.ITiendasService;
 
 @RestController

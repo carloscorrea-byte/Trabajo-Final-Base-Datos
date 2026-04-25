@@ -1,4 +1,4 @@
-package com.apirest.backend.model;
+package com.apirest.backend.Model;
 
 import java.util.ArrayList;
 import java.util.List;
