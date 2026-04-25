@@ -1,4 +1,4 @@
-package com.apirest.backend.Model;
+package com.apirest.backend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
