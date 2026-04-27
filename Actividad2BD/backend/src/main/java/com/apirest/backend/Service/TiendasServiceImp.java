@@ -1,3 +1,34 @@
+package com.apirest.backend.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.apirest.backend.Model.TiendasModel;
+import com.apirest.backend.Repository.ITiendasRepository;
+
+import org.bson.types.ObjectId;
+
+import com.apirest.backend.DTO.TiendaDTO;
+import com.apirest.backend.Exception.RecursoNoEncontradoException;
+
+@Service
+public class TiendasServiceImp implements ITiendasService {
+    //inyección de dependencia con el repositorio
+    @Autowired ITiendasRepository tiendasRepository;
+
+    @Override
+    public String GuardarTienda(TiendasModel tienda) {
+        tiendasRepository.save(tienda);
+        return "La tienda " + tienda.getNombre() + ", fue creada con éxito";
+    }
+
+    @Override
+    public List<TiendasModel> ListarTiendas() {
+        return tiendasRepository.findAll();
+    }
+
 @Override
     public TiendasModel buscarTiendaPorId(ObjectId id) {
         // Este método utiliza una función lambda para buscar una tienda por su ID en el repositorio.
@@ -35,3 +66,5 @@
     public List<TiendaDTO> buscarTiendasPorCiudad(String ciudad) {
         return tiendasRepository.buscarTiendasPorCiudad(ciudad);
     }
+
+}
